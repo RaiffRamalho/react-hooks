@@ -41,7 +41,7 @@ function App() {
 
       </div>
 
-      <hr /> */}
+      <hr />
       <div>
         {
           showGallery ? <Gallery /> : null
@@ -51,13 +51,14 @@ function App() {
         </button>
       </div>
       <hr />
-      {/* <Joke /> */}
-      {/* <hr /> */}
-      {/* <Stories /> */}
-      {/* <Tasks /> */}
+      <Joke />
       <hr />
-      <Matrix />
-      {/* <Tasks /> */}
+      <Stories />
+      <hr />
+      <Matrix /> */}
+      <hr />
+      <Tasks />
+
     </div>
   );
 }
