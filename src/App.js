@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import Joke from './Joke';
 import Stories from './Stories';
 import Tasks from './Tasks';
+import Gallery from './Gallery';
+import Matrix from './Matrix';
+
 
 
 
 function App() {
   const [userQuery, setUserQuery] = useState('');
+  const [showGallery, setShowGallery] = useState(true)
 
   const updateUserQuery = event => {
     setUserQuery(event.target.value)
@@ -23,20 +27,37 @@ function App() {
     }
   }
 
+  const toggleShowGallery = () => {
+    setShowGallery(!showGallery)
+  }
+
   return (
     <div className="App">
       <h1>Hi Raiff</h1>
-      <div className='form'>
+      {/* <div className='form'>
         <input value={userQuery} onChange={updateUserQuery}/>
 
         <button onClick={searchUserQuery}>Search</button>
 
       </div>
 
+      <hr /> */}
+      <div>
+        {
+          showGallery ? <Gallery /> : null
+        }
+        <button onClick={toggleShowGallery}>
+          { showGallery ? 'Hide': 'Show'} Gallery
+        </button>
+      </div>
       <hr />
       {/* <Joke /> */}
+      {/* <hr /> */}
       {/* <Stories /> */}
-      <Tasks />
+      {/* <Tasks /> */}
+      <hr />
+      <Matrix />
+      {/* <Tasks /> */}
     </div>
   );
 }
